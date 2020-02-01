@@ -12,7 +12,7 @@ export PATH="$SWIFTENV_ROOT/bin:$SWIFTENV_ROOT/shims:$PATH"
 if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
 then
   rm -rf $SWIFTENV_ROOT/versions/$SWIFT_VERSION
-  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift_version/${SWIFT_VERSION} $SWIFTENV_ROOT/versions/.
+  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift_version/${SWIFT_VERSION} $SWIFTENV_ROOT/versions/$SWIFT_VERSION
   swiftenv rehash
 fi
 
@@ -25,5 +25,5 @@ if [ ! -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
 then
   rm -rf $NETLIFY_CACHE_DIR/swift-custom/swift_version
   mkdir -p $NETLIFY_CACHE_DIR/swift-custom/swift_version
-  cp -p -r $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift-custom/swift_version/.
+  cp -p -r $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION
 fi
