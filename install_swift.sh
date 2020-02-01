@@ -14,6 +14,7 @@ fi
 if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
 then
   rm -rf $SWIFTENV_ROOT/versions/$SWIFT_VERSION
+  mkdir -p $SWIFTENV_ROOT/versions
   cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift_version/${SWIFT_VERSION} $SWIFTENV_ROOT/versions/$SWIFT_VERSION
   swiftenv rehash
 fi
