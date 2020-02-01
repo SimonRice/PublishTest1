@@ -6,6 +6,7 @@
 # Swiftenv setup
 export SWIFTENV_ROOT="${SWIFTENV_ROOT:-${HOME}/.swiftenv}"
 git clone --depth 1 https://github.com/kylef/swiftenv.git "$SWIFTENV_ROOT"
+export PATH="$SWIFTENV_ROOT/bin:$SWIFTENV_ROOT/shims:$PATH"
 
 # Check cache for Swift version
 if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
