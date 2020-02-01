@@ -22,5 +22,5 @@ if ![ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
 then
   rm -rf $NETLIFY_CACHE_DIR/swift-custom/swift_version
   mkdir $NETLIFY_CACHE_DIR/swift-custom/swift_version
-  mv $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift_version/
+  mv $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift-custom/swift_version/
 fi
