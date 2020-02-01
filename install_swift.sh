@@ -20,7 +20,7 @@ fi
 swiftenv install -s $SWIFT_VERSION
 
 # Cache Swift version
-if ![ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
+if [ ! -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
 then
   rm -rf $NETLIFY_CACHE_DIR/swift-custom/swift_version
   mkdir $NETLIFY_CACHE_DIR/swift-custom/swift_version
