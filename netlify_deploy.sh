@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-unset URL
-
 # Create caches (if not there)
 # export NETLIFY_CACHE_DIR="/opt/buildhome/cache"
 # mkdir -p $NETLIFY_CACHE_DIR/swift-custom
