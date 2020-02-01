@@ -6,10 +6,6 @@ unset URL
 export NETLIFY_CACHE_DIR="/opt/build/cache"
 mkdir -p $NETLIFY_CACHE_DIR/swift-custom
 
-echo "Showing cache"
-ls -la $NETLIFY_CACHE_DIR
-ls -la $NETLIFY_CACHE_DIR/swift-custom
-
 # Restore SPM Cache
 if [ -d $NETLIFY_CACHE_DIR/swift-custom/.build ]
 then
