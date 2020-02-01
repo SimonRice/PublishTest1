@@ -3,28 +3,24 @@
 # Automatically installs swiftenv and run's swiftenv install.
 # This script was designed for usage in CI systems.
 
+mkdir -p $NETLIFY_CACHE_DIR/swift-custom/swift_version
+
 export SWIFTENV_ROOT="${SWIFTENV_ROOT:-${HOME}/.swiftenv}"
-
-if [ -d "$SWIFTENV_ROOT/versions" ]; then
-  mv "$SWIFTENV_ROOT/versions" swiftenv_versions
-fi
-
-if [ -d "$SWIFTENV_ROOT" ]; then
-  rm -rf "$SWIFTENV_ROOT"
-fi
-
 git clone --depth 1 https://github.com/kylef/swiftenv.git "$SWIFTENV_ROOT"
 
-if [ -d swiftenv_versions ]; then 
-  mv swiftenv_versions "$SWIFTENV_ROOT/versions"
-fi
-
-export PATH="$SWIFTENV_ROOT/bin:$SWIFTENV_ROOT/shims:$PATH"
-
-if [ -f ".swift-version" ] || [ -n "$SWIFT_VERSION" ]; then
-  swiftenv install -s
-else
+if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
+then
+  rm -rf $SWIFTENV_ROOT/versions/$SWIFT_VERSION
+  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift_version/${SWIFT_VERSION} $SWIFTENV_ROOT/versions/
   swiftenv rehash
 fi
 
+swiftenv install -s $SWIFT_VERSION
 eval "$(swiftenv init -)"
+
+if ![ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
+then
+  rm -rf $NETLIFY_CACHE_DIR/swift-custom/swift_version
+  mkdir $NETLIFY_CACHE_DIR/swift-custom/swift_version
+  mv $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift_version/
+fi
