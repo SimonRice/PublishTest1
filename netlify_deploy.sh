@@ -14,7 +14,7 @@ ls -la $NETLIFY_CACHE_DIR/swift-custom
 if [ -d $NETLIFY_CACHE_DIR/swift-custom/.build ]
 then
   rm -rf .build
-  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/build .build
+  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/.build .build
 fi
 
 eval "$(cat install_swift.sh)"
