@@ -6,7 +6,7 @@
 
 echo "Showing build base... $NETLIFY_BUILD_BASE"
 echo "Showing cache... $NETLIFY_CACHE_DIR"
-# ls -la $NETLIFY_CACHE_DIR/
+ls -la /opt/build/cache
 # ls -la $NETLIFY_CACHE_DIR/swift-custom/
 
 # Restore SPM Cache
