@@ -7,7 +7,7 @@ unset URL
 # mkdir -p $NETLIFY_CACHE_DIR/swift-custom
 
 echo "Showing Swift cache"
-echo $NETLIFY_CACHE_DIR
+echo ${NETLIFY_CACHE_DIR}
 # ls -la $NETLIFY_CACHE_DIR/
 # ls -la $NETLIFY_CACHE_DIR/swift-custom/
 
