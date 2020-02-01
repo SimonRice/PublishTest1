@@ -7,12 +7,10 @@ export NETLIFY_CACHE_DIR="/opt/build/cache"
 mkdir -p $NETLIFY_CACHE_DIR/swift-custom
 
 # Restore SPM Cache
-ls -la $NETLIFY_CACHE_DIR/swift-custom/swift-build
 if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift-build ]
 then
   rm -rf .build
   cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift-build .build
-  ls -la .build
 fi
 
 eval "$(cat install_swift.sh)"

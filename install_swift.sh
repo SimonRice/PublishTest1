@@ -11,11 +11,11 @@ then
 fi
 
 # Check cache for Swift version
-if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
+if [ -d $NETLIFY_CACHE_DIR/swift-custom/swift-version/$SWIFT_VERSION ]
 then
   rm -rf $SWIFTENV_ROOT/versions/$SWIFT_VERSION
   mkdir -p $SWIFTENV_ROOT/versions
-  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift_version/${SWIFT_VERSION} $SWIFTENV_ROOT/versions/$SWIFT_VERSION
+  cp -p -r $NETLIFY_CACHE_DIR/swift-custom/swift-version/${SWIFT_VERSION} $SWIFTENV_ROOT/versions/$SWIFT_VERSION
   swiftenv rehash
 fi
 
@@ -23,9 +23,9 @@ fi
 swiftenv install -s $SWIFT_VERSION
 
 # Cache Swift version
-if [ ! -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
+if [ ! -d $NETLIFY_CACHE_DIR/swift-custom/swift-version/$SWIFT_VERSION ]
 then
-  rm -rf $NETLIFY_CACHE_DIR/swift-custom/swift_version
-  mkdir -p $NETLIFY_CACHE_DIR/swift-custom/swift_version
-  cp -p -r $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION
+  rm -rf $NETLIFY_CACHE_DIR/swift-custom/swift-version
+  mkdir -p $NETLIFY_CACHE_DIR/swift-custom/swift-version
+  cp -p -r $SWIFTENV_ROOT/versions/$SWIFT_VERSION $NETLIFY_CACHE_DIR/swift-custom/swift-version/$SWIFT_VERSION
 fi
