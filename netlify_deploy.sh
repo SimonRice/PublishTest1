@@ -18,7 +18,7 @@ swift run
 
 # Cache new build dir
 rm -rf $NETLIFY_CACHE_DIR/swift-custom/.build
-cp -p -r .build $NETLIFY_CACHE_DIR/swift-custom/
+cp -p -r .build $NETLIFY_CACHE_DIR/swift-custom/.
 
 ls -l $NETLIFY_CACHE_DIR/swift-custom/
 ls -l $NETLIFY_CACHE_DIR/swift-custom/.build
