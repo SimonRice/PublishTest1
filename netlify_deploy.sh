@@ -4,8 +4,7 @@
 # export NETLIFY_CACHE_DIR="/opt/buildhome/cache"
 # mkdir -p $NETLIFY_CACHE_DIR/swift-custom
 
-echo "Showing Swift cache"
-echo ${NETLIFY_CACHE_DIR}
+echo "Showing Swift cache... $NETLIFY_CACHE_DIR"
 # ls -la $NETLIFY_CACHE_DIR/
 # ls -la $NETLIFY_CACHE_DIR/swift-custom/
 
