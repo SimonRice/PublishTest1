@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# Automatically installs swiftenv and run's swiftenv install.
-# This script was designed for usage in CI systems.
-
 # Swiftenv setup
 export SWIFTENV_ROOT="${SWIFTENV_ROOT:-${HOME}/.swiftenv}"
 git clone --depth 1 https://github.com/kylef/swiftenv.git "$SWIFTENV_ROOT"
