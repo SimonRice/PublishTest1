@@ -21,5 +21,5 @@ eval "$(cat install_swift.sh)"
 swift run
 
 # Cache new build dir
-rm -rf $NETLIFY_CACHE_DIR/swift-custom/.swift_build
-cp -p -r .build $NETLIFY_CACHE_DIR/swift-custom/
+rm -rf $NETLIFY_CACHE_DIR/swift-custom/.build
+cp -p -r .build $NETLIFY_CACHE_DIR/swift-custom/.build
