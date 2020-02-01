@@ -7,6 +7,7 @@ export NETLIFY_CACHE_DIR="/opt/buildhome/cache"
 mkdir -p $NETLIFY_CACHE_DIR/swift-custom
 
 echo "Showing Swift cache"
+ls -la $NETLIFY_CACHE_DIR/
 ls -la $NETLIFY_CACHE_DIR/swift-custom/
 
 # Restore SPM Cache
