@@ -18,7 +18,6 @@ fi
 
 # Install Swift version
 swiftenv install -s $SWIFT_VERSION
-eval "$(swiftenv init -)"
 
 # Cache Swift version
 if ![ -d $NETLIFY_CACHE_DIR/swift-custom/swift_version/$SWIFT_VERSION ]
