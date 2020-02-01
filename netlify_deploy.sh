@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Create caches (if not there)
 # export NETLIFY_CACHE_DIR="/opt/buildhome/cache"

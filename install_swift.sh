@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 # Automatically installs swiftenv and run's swiftenv install.
 # This script was designed for usage in CI systems.
