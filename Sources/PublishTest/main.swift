@@ -14,9 +14,9 @@ struct PublishTest: Website {
     }
 
     // Update these properties to configure your website:
-    var url = URL(string: "https://your-website-url.com")!
-    var name = "PublishTest"
-    var description = "A description of PublishTest"
+    var url = URL(string: "https://elastic-noyce-9e4c1d.netlify.com")!
+    var name = "Netlify Publish Test"
+    var description = "An example of John Sundell's Publish that has been published straight to Netlify with full build caching"
     var language: Language { .english }
     var imagePath: Path? { nil }
 }
