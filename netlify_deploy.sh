@@ -3,7 +3,7 @@
 unset URL
 
 # Create caches
-export NETLIFY_CACHE_DIR="${HOME}/cache"
+export NETLIFY_CACHE_DIR="/opt/buildhome/cache"
 mkdir -p $NETLIFY_CACHE_DIR/swift-custom/.swift-build
 
 eval "$(cat install_swift.sh)"
